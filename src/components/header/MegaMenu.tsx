@@ -91,7 +91,7 @@ export const MegaMenu: React.FC = () => {
           {/* Quick Product Switcher */}
           <div className="hidden xl:flex items-center gap-1.5 text-xs text-neutral-500 shrink-0 border-l border-neutral-200 pl-4 my-1">
             <span className="font-medium text-neutral-400 uppercase text-[10px] tracking-wider">Catalog:</span>
-            {products.slice(0, 3).map((prod) => {
+            {products.slice(0, 5).map((prod) => {
               const isSelected = activeProduct.id === prod.id;
               const shortLabel =
                 prod.title.es.split(' con ')[0].split(' with ')[0].split(' ')[0] +

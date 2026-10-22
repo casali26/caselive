@@ -71,7 +71,7 @@ export const BuyBox: React.FC = () => {
             </span>
             <span className="text-neutral-300">·</span>
             <span className="text-xs text-neutral-500 font-medium">
-              Ergonomic Studio
+              {activeProduct.categoryPath[1] || activeProduct.categoryPath[0] || 'Design Collection'}
             </span>
           </div>
 

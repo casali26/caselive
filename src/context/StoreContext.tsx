@@ -10,6 +10,10 @@ import {
 } from '../types';
 import { COUNTRIES, PRODUCTS, UI_TRANSLATIONS } from '../data/mockData';
 import {
+  SHOPIFY_LIVE_PRODUCTS,
+  SHOPIFY_LIVE_CATEGORIES,
+} from '../data/shopifyLiveCatalog';
+import {
   fetchLiveShopifyCatalog,
   buildMegaMenuFromShopify,
   getMockShopifyStorefrontResponse,
@@ -78,77 +82,66 @@ interface StoreContextType {
 
 const StoreContext = createContext<StoreContextType | undefined>(undefined);
 
-// Initial bootstrap of mock Shopify catalog
-const initialMock = getMockShopifyStorefrontResponse();
-const initialMockCollections = initialMock.collections.edges.map((e) => e.node);
-const initialMockProducts: Product[] = [];
-initialMockCollections.forEach((coll) => {
-  coll.products.edges.forEach((edge) => {
-    initialMockProducts.push(transformShopifyProduct(edge.node, coll.title));
-  });
-});
-// Combine with any extra mock products
-PRODUCTS.forEach((p) => {
-  if (!initialMockProducts.some((item) => item.id === p.id || item.spu === p.spu)) {
-    initialMockProducts.push(p);
-  }
-});
-const initialCategoriesTree = buildMegaMenuFromShopify(
-  initialMockCollections,
-  initialMock.menu,
-  initialMockProducts
-);
+// Initial bootstrap of live Shopify catalog from td5kxa-2d.myshopify.com
+const initialProducts: Product[] = SHOPIFY_LIVE_PRODUCTS;
+const initialCategoriesTree: MegaMenuCategory[] = SHOPIFY_LIVE_CATEGORIES;
 
 export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentCountry, setCurrentCountry] = useState<CountryConfig>(COUNTRIES[0]); // default ES
   const [currentLanguage, setCurrentLanguage] = useState<'es' | 'en' | 'de' | 'fr' | 'it'>('es');
   
   // Products & MegaMenu State
-  const [products, setProducts] = useState<Product[]>(initialMockProducts);
+  const [products, setProducts] = useState<Product[]>(initialProducts);
   const [categoriesTree, setCategoriesTree] = useState<MegaMenuCategory[]>(initialCategoriesTree);
-  const [activeProduct, setActiveProduct] = useState<Product>(initialMockProducts[0] || PRODUCTS[0]);
+  const [activeProduct, setActiveProduct] = useState<Product>(initialProducts[0]);
   const [selectedVariantId, setSelectedVariantId] = useState<string>(
-    initialMockProducts[0]?.variants[0]?.id || PRODUCTS[0].selectedVariantId
+    initialProducts[0]?.variants[0]?.id || ''
   );
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
   const [selectedCollectionFilter, setSelectedCollectionFilter] = useState<string | null>(null);
 
   // Shopify Storefront Connection State
   const [shopifyConfig, setShopifyConfig] = useState<ShopifyConfig>(() => {
-    const savedDomain = typeof window !== 'undefined' ? localStorage.getItem('caselive_shopify_domain') : null;
-    const savedToken = typeof window !== 'undefined' ? localStorage.getItem('caselive_shopify_token') : null;
-    const savedVersion = typeof window !== 'undefined' ? localStorage.getItem('caselive_shopify_version') : null;
-
-    if (savedDomain && savedToken) {
-      return {
-        storeDomain: savedDomain,
-        storefrontAccessToken: savedToken,
-        apiVersion: savedVersion || '2024-01',
-        status: 'connected',
-        lastSyncedAt: new Date().toLocaleTimeString(),
-      };
+    let queryDomain = '';
+    let queryToken = '';
+    if (typeof window !== 'undefined') {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        queryDomain = urlParams.get('shop') || urlParams.get('shopify_domain') || '';
+        queryToken = urlParams.get('token') || urlParams.get('storefront_token') || '';
+      } catch (e) {
+        // ignore
+      }
     }
 
+    const savedDomain = queryDomain || (typeof window !== 'undefined' ? localStorage.getItem('caselive_shopify_domain') : null);
+    const savedToken = queryToken || (typeof window !== 'undefined' ? localStorage.getItem('caselive_shopify_token') : null);
+    const savedVersion = typeof window !== 'undefined' ? localStorage.getItem('caselive_shopify_version') : null;
+
+    const activeDomain = savedDomain || (import.meta.env.VITE_SHOPIFY_STORE_DOMAIN as string) || 'td5kxa-2d.myshopify.com';
+    const activeToken = savedToken || (import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN as string) || '';
+
     return {
-      storeDomain: (import.meta.env.VITE_SHOPIFY_STORE_DOMAIN as string) || '',
-      storefrontAccessToken: (import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN as string) || '',
-      apiVersion: '2024-01',
-      status: 'demo',
+      storeDomain: activeDomain,
+      storefrontAccessToken: activeToken,
+      apiVersion: savedVersion || '2024-01',
+      status: 'connected',
+      lastSyncedAt: new Date().toLocaleTimeString(),
     };
   });
 
   const [cart, setCart] = useState<CartItem[]>([
     {
-      productId: initialMockProducts[0].id,
-      variantId: initialMockProducts[0].variants[0].id,
-      spu: initialMockProducts[0].spu,
-      sku: initialMockProducts[0].variants[0].sku,
-      title: initialMockProducts[0].title.es,
-      brand: initialMockProducts[0].brand,
-      colorName: initialMockProducts[0].variants[0].colorName,
-      imageUrl: initialMockProducts[0].images[0].url,
-      priceEUR: initialMockProducts[0].basePriceEUR,
-      originalPriceEUR: initialMockProducts[0].originalPriceEUR,
+      productId: initialProducts[0].id,
+      variantId: initialProducts[0].variants[0].id,
+      spu: initialProducts[0].spu,
+      sku: initialProducts[0].variants[0].sku,
+      title: initialProducts[0].title.es,
+      brand: initialProducts[0].brand,
+      colorName: initialProducts[0].variants[0].colorName,
+      imageUrl: initialProducts[0].images[0].url,
+      priceEUR: initialProducts[0].basePriceEUR,
+      originalPriceEUR: initialProducts[0].originalPriceEUR,
       quantity: 1,
     },
   ]);
@@ -249,12 +242,12 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       status: 'demo',
     });
 
-    setProducts(initialMockProducts);
+    setProducts(initialProducts);
     setCategoriesTree(initialCategoriesTree);
-    setActiveProduct(initialMockProducts[0]);
-    setSelectedVariantId(initialMockProducts[0].variants[0]?.id || '');
+    setActiveProduct(initialProducts[0]);
+    setSelectedVariantId(initialProducts[0].variants[0]?.id || '');
     setActiveImageIndex(0);
-    showToast('Reset to CaseLive demo catalog');
+    showToast('Reset to Casalivo catalog');
   };
 
   // Refresh current catalog

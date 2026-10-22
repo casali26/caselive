@@ -114,12 +114,15 @@ export const FoldableSections: React.FC = () => {
     Object.values(activeProduct.fullDescription || {})[0] ||
     '';
 
-  // Filter out any internal SKU / SPU / Ref specifications
-  const cleanSpecs = activeProduct.specifications.filter(
+  // Filter out any internal SKU / SPU / Ref / Shopify ID specifications or raw GIDs
+  const cleanSpecs = (activeProduct.specifications || []).filter(
     (s) =>
       !s.label.toLowerCase().includes('spu') &&
       !s.label.toLowerCase().includes('sku') &&
-      !s.label.toLowerCase().includes('ref')
+      !s.label.toLowerCase().includes('ref') &&
+      !s.label.toLowerCase().includes('shopify') &&
+      !s.label.toLowerCase().includes('id') &&
+      !s.value.toLowerCase().includes('gid://')
   );
 
   return (
