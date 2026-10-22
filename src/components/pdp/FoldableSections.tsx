@@ -114,6 +114,17 @@ export const FoldableSections: React.FC = () => {
     Object.values(activeProduct.fullDescription || {})[0] ||
     '';
 
+  const cleanHtmlDescription = (raw: string): string => {
+    if (!raw) return '';
+    return raw
+      .replace(/gid:\/\/shopify\/[A-Za-z0-9_\/]+/g, '')
+      .replace(/Ref\s*:\s*[A-Z0-9_-]+/gi, '')
+      .replace(/SPU\s*:\s*[A-Z0-9_-]+/gi, '');
+  };
+
+  const hasHtmlDescription = /<[a-z][\s\S]*>/i.test(fullDesc);
+  const cleanedDesc = cleanHtmlDescription(fullDesc);
+
   // Filter out any internal SKU / SPU / Ref / Shopify ID specifications or raw GIDs
   const cleanSpecs = (activeProduct.specifications || []).filter(
     (s) =>
@@ -226,11 +237,19 @@ export const FoldableSections: React.FC = () => {
         icon={<FileText className="w-4 h-4 text-neutral-700" />}
         isOpen={!!openSections.description}
         onToggle={() => toggleSection('description')}
+        badge="Catalog Details"
       >
         <div className="pt-2 space-y-4">
-          <p className="leading-relaxed text-neutral-700 whitespace-pre-line text-sm">
-            {fullDesc}
-          </p>
+          {hasHtmlDescription ? (
+            <div
+              className="product-html-content overflow-x-auto text-neutral-700 text-xs sm:text-sm leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: cleanedDesc }}
+            />
+          ) : (
+            <p className="leading-relaxed text-neutral-700 whitespace-pre-line text-xs sm:text-sm">
+              {cleanedDesc}
+            </p>
+          )}
 
           <div className="p-4 bg-neutral-50 border border-neutral-200 rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">

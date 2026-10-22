@@ -33,3 +33,107 @@
 .thin-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* Product HTML Description styling (Accordions / Drawers) */
+.product-html-content {
+  color: #374151;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.product-html-content p {
+  margin-bottom: 0.875rem;
+  line-height: 1.65;
+  color: #374151;
+}
+
+.product-html-content h3 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.01em;
+  margin-top: 1.25rem;
+  margin-bottom: 0.625rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #f3f4f6;
+  text-transform: uppercase;
+}
+
+.product-html-content h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-html-content ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.product-html-content ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.product-html-content li {
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.product-html-content strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.product-html-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  font-size: 0.8125rem;
+}
+
+.product-html-content table tr {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.product-html-content table tr:last-child {
+  border-bottom: none;
+}
+
+.product-html-content table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.product-html-content table td,
+.product-html-content table th {
+  padding: 0.625rem 0.875rem;
+  vertical-align: top;
+  color: #374151;
+}
+
+.product-html-content table td:first-child {
+  font-weight: 600;
+  color: #1f2937;
+  width: 32%;
+}
+
+.product-html-content div {
+  max-width: 100%;
+}
+

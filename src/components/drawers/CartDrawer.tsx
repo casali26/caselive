@@ -136,12 +136,12 @@ export const CartDrawer: React.FC = () => {
                       </button>
                     </div>
 
-                    <h4 className="text-xs font-medium text-neutral-900 line-clamp-1 leading-snug">
+                    <h4 className="text-xs font-medium text-neutral-900 line-clamp-2 leading-snug">
                       {item.title}
                     </h4>
 
-                    <div className="text-[11px] text-neutral-500 mt-0.5">
-                      Color: {item.colorName.split('/')[0]}
+                    <div className="text-[11px] text-neutral-500 mt-1">
+                      Color: <span className="font-medium text-neutral-700">{item.colorName.split('/')[0]}</span>
                     </div>
                   </div>
 
