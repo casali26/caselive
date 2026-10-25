@@ -1,780 +1,321 @@
-import { MegaMenuCategory } from "../types/index";
-
+import { MegaMenuCategory } from '../types';
+export const SHOPIFY_SYNC_STATS = {
+  totalStoreProducts: 2500,
+  syncedProducts: 1000,
+  lastSyncedAt: "2026-10-25T11:12:41.425Z",
+  storeDomain: "td5kxa-2d.myshopify.com"
+};
 export const SHOPIFY_LIVE_CATEGORIES: MegaMenuCategory[] = [
   {
-    "id": "home-office",
-    "name": "Home & Office",
-    "handle": "home-office",
+    "id": "mascotas",
+    "name": "Mascotas",
+    "handle": "mascotas",
     "icon": "Briefcase",
-    "featuredTag": "Workspaces",
+    "featuredTag": "201 Productos",
     "subcategories": [
       {
-        "title": "Office Chairs",
-        "handle": "office-chairs",
+        "title": "Selección Exclusiva",
+        "handle": "selecci-n-exclusiva",
         "items": [
           {
-            "label": "Silla Gamer Reclinable",
-            "productId": "921-450-silla-gamer-reclinable-con-reposapies-sillon-gaming-con",
+            "label": "Casa de Tortugas de Madera con 2 Cas...",
+            "productId": "d40-035-casa-de-tortugas-de-madera-con-2-casetas-y-soporte-para-lamp",
             "type": "product"
           },
           {
-            "label": "Silla",
-            "productId": "921-536-silla-de-escritorio-giratoria-silla-de-oficina-basculan",
+            "label": "Túnel para Gatos de Madera con 3 Pue...",
+            "productId": "d34-013-tunel-para-gatos-de-madera-con-3-puertas-extraibles-techo-de",
             "type": "product"
           },
           {
-            "label": "Silla",
-            "productId": "921-226-silla-de-escritorio-giratoria-sin-brazos-silla-de-malla",
+            "label": "Lanzador de Pelotas para Perros Auto...",
+            "productId": "d03-008-lanzador-de-pelotas-para-perros-automatico-con-6-pelotas-etp",
             "type": "product"
           },
           {
-            "label": "Silla",
-            "productId": "921-688v00-silla-de-oficina-de-malla-silla-de-escritorio-respaldo",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Office Desks",
-        "handle": "office-desks",
-        "items": [
-          {
-            "label": "Escritorio",
-            "productId": "920-011v82-escritorio-con-estanterias-mesa-de-ordenador-con-2-cajo",
+            "label": "Jaula para Perros Plegable con Rueda...",
+            "productId": "d02-259-jaula-para-perros-plegable-con-ruedas-y-bandeja-extraible-pu",
             "type": "product"
           },
           {
-            "label": "Escritorio Plegable",
-            "productId": "836-532-escritorio-plegable-de-pared-moderno-mesa-flotante-mult",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Nightstands",
-        "handle": "nightstands",
-        "items": [
-          {
-            "label": "Mesilla",
-            "productId": "831-641v00-mesilla-de-noche-con-2-cajones-mesita-de-noche-mesita-a",
+            "label": "Arenero para Gatos de Acero Inoxidab...",
+            "productId": "d31-139-arenero-para-gatos-de-acero-inoxidable-xl-con-tapa-abatible",
             "type": "product"
           },
           {
-            "label": "Mesilla",
-            "productId": "831-714v00-mesilla-de-noche-blanca-mesita-de-noche-con-2-cajones-e",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Wardrobes",
-        "handle": "wardrobes",
-        "items": [
-          {
-            "label": "Armario Ropero",
-            "productId": "850-286v00-armario-ropero-de-tela-armario-portatil-con-10-comparti",
-            "type": "product"
-          },
-          {
-            "label": "Perchero",
-            "productId": "831-173v01-perchero-de-pie-de-madera-con-6-ganchos-para-ropas-bols",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Storage Trolleys",
-        "handle": "storage-trolleys",
-        "items": [
-          {
-            "label": "Carrito Auxiliar",
-            "productId": "801-213v81-carrito-auxiliar-con-ruedas-carrito-de-cocina-con-abier",
-            "type": "product"
-          },
-          {
-            "label": "Carrito Auxiliar Plegable Carrito",
-            "productId": "801-125-carrito-auxiliar-plegable-carrito-de-cocina-con-6-rueda",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Garden Lighting",
-        "handle": "garden-lighting",
-        "items": [
-          {
-            "label": "Farola Solar para Jardín",
-            "productId": "842-108-farola-solar-para-jardin-con-panel-solar-encendido-auto",
-            "type": "product"
-          },
-          {
-            "label": "Farol Solar",
-            "productId": "842-135-farol-solar-de-jardin-con-18-luces-led-blanca-fria-6000",
+            "label": "Túnel para Gatos 3 en 1 Cama Túnel p...",
+            "productId": "d34-011-tunel-para-gatos-3-en-1-cama-tunel-para-gatos-plegable-cojin",
             "type": "product"
           }
         ]
       }
     ],
     "banner": {
-      "headline": "Silla Gamer Reclinable con Reposapiés ",
-      "subtext": "Sincronizado directamente desde el catálogo Shopify (79 productos disponibles).",
-      "linkText": "Ver Producto",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/1089/6946/0049/files/IEY98a1a0855e6a60.jpg?v=1792600321",
-      "targetProductId": "921-450-silla-gamer-reclinable-con-reposapies-sillon-gaming-con"
+      "headline": "Colección Mascotas",
+      "subtext": "Mobiliario y confort con envío express desde Valencia.",
+      "linkText": "Ver Colección",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/1089/6946/0049/files/Tv598a1a15a1fb5bd.jpg?v=1792905556",
+      "targetProductId": "d40-035-casa-de-tortugas-de-madera-con-2-casetas-y-soporte-para-lamp"
     }
   },
   {
-    "id": "living-comfort",
-    "name": "Living & Comfort",
-    "handle": "living-comfort",
-    "icon": "Sofa",
-    "featuredTag": "Interior",
-    "subcategories": [
-      {
-        "title": "Recliners & Massage Chairs",
-        "handle": "recliners-massage-chairs",
-        "items": [
-          {
-            "label": "Sofá Reclinable Manual Sillón Relax ",
-            "productId": "839-850v80-sofa-reclinable-manual-sillon-relax-tapizado-en-tela-re",
-            "type": "product"
-          },
-          {
-            "label": "Sillón Reclinable Manual Sofá Indivi",
-            "productId": "839-863v80-sillon-reclinable-manual-sofa-individual-con-reclinacio",
-            "type": "product"
-          },
-          {
-            "label": "Sillón Relax Reclinable hasta 160° S",
-            "productId": "839-811v00-sillon-relax-reclinable-hasta-160-sofa-reclinable-moder",
-            "type": "product"
-          },
-          {
-            "label": "Sillón",
-            "productId": "700-156v90-sillon-de-masaje-con-vibracion-reclinacion-145-mando-a",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Dining Tables",
-        "handle": "dining-tables",
-        "items": [
-          {
-            "label": "Mesa",
-            "productId": "835-621v00-mesa-de-cocina-plegable-con-de-almacenaje-y-abatibles-e",
-            "type": "product"
-          },
-          {
-            "label": "Mesa Plegable",
-            "productId": "835-058v01-mesa-plegable-con-2-alas-abatibles-de-madera-2-estantes",
-            "type": "product"
-          },
-          {
-            "label": "Mesa",
-            "productId": "835-957v00-mesa-de-comedor-plegable-con-ruedas-mesa-de-cocina-con",
-            "type": "product"
-          },
-          {
-            "label": "Mesa",
-            "productId": "835-928v00-mesa-de-comedor-plegable-alas-abatibles-con-ruedas-y-2",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Floor & Table Lamps",
-        "handle": "floor-table-lamps",
-        "items": [
-          {
-            "label": "Lámpara",
-            "productId": "b31-331v90-lampara-de-pie-de-madera-con-estante-para-bombilla-e27",
-            "type": "product"
-          },
-          {
-            "label": "Lámpara",
-            "productId": "b31-467v90-lampara-de-pie-en-forma-arco-moderna-portalampara-e27-c",
-            "type": "product"
-          },
-          {
-            "label": "Lámpara",
-            "productId": "b31-320-lampara-de-pie-moderna-con-mesita-pantalla-de-lino-inte",
-            "type": "product"
-          },
-          {
-            "label": "Lámpara",
-            "productId": "b31-333-lampara-de-pie-con-mesita-auxiliar-y-pantalla-de-lino-i",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "TV Units & Stands",
-        "handle": "tv-units-stands",
-        "items": [
-          {
-            "label": "Mueble TV",
-            "productId": "833-948v01-mueble-tv-con-ruedas-mueble-de-salon-mesa-para-televiso",
-            "type": "product"
-          },
-          {
-            "label": "Mueble TV",
-            "productId": "839-704v80-mueble-tv-de-salon-mesa-para-televisores-de-hasta-58-co",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Servers, Sideboards & Buffets",
-        "handle": "servers-sideboards-buffets",
-        "items": [
-          {
-            "label": "Aparador Armario",
-            "productId": "835-897v00-aparador-armario-de-cocina-con-cajon-y-abiertos-para-sa",
-            "type": "product"
-          },
-          {
-            "label": "Aparador",
-            "productId": "838-392v80-aparador-de-salon-armario-de-almacenamiento-con-con-est",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Bathroom Mirrors",
-        "handle": "bathroom-mirrors",
-        "items": [
-          {
-            "label": "Espejo",
-            "productId": "834-660v90-espejo-de-bano-con-luces-led-espejo-de-pared-antivaho-c",
-            "type": "product"
-          },
-          {
-            "label": "Mueble",
-            "productId": "834-647v00-mueble-de-bano-con-espejo-estantes-ajustables-interrupt",
-            "type": "product"
-          }
-        ]
-      }
-    ],
-    "banner": {
-      "headline": "Sofá Reclinable Manual Sillón Relax Ta",
-      "subtext": "Sincronizado directamente desde el catálogo Shopify (40 productos disponibles).",
-      "linkText": "Ver Producto",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/1089/6946/0049/files/SYj98a1a07bd7cc3b.jpg?v=1792600145",
-      "targetProductId": "839-850v80-sofa-reclinable-manual-sillon-relax-tapizado-en-tela-re"
-    }
-  },
-  {
-    "id": "outdoor-living",
-    "name": "Outdoor Living",
-    "handle": "outdoor-living",
+    "id": "juguetes",
+    "name": "Juguetes",
+    "handle": "juguetes",
     "icon": "Sun",
-    "featuredTag": "Garden & Patio",
+    "featuredTag": "177 Productos",
     "subcategories": [
       {
-        "title": "Rattan Furniture",
-        "handle": "rattan-furniture",
+        "title": "Selección Exclusiva",
+        "handle": "selecci-n-exclusiva",
         "items": [
           {
-            "label": "Banco Acapulco",
-            "productId": "867-177v01-banco-acapulco-con-reposabrazos-cojines-y-marco-de-acer",
+            "label": "Coche Eléctrico Niños 12V Mercedes-A...",
+            "productId": "370-494-coche-electrico-ninos-12v-mercedes-amg-g63-control-remoto-2",
             "type": "product"
           },
           {
-            "label": "Mesa Exterior Terraza",
-            "productId": "01-0721-mesa-exterior-terraza-de-ratan-sintetico-mesa-auxiliar",
+            "label": "Quad Eléctrico para Niños 12V 2 Moto...",
+            "productId": "370-522-quad-electrico-para-ninos-12v-2-motores-bateria-de-litio-arr",
             "type": "product"
           },
           {
-            "label": "Juego",
-            "productId": "860-303v00-juego-de-muebles-de-terraza-con-de-y-de-centro-con-enci",
+            "label": "Cocina de Juguete de Madera con Cafe...",
+            "productId": "350-241-cocina-de-juguete-de-madera-con-cafetera-maquina-de-hielo-19",
             "type": "product"
           },
           {
-            "label": "Conjunto",
-            "productId": "860-294v00-conjunto-de-muebles-de-ratan-de-jardin-sofa-de-3-plazas",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Greenhouse",
-        "handle": "greenhouse",
-        "items": [
-          {
-            "label": "Invernadero",
-            "productId": "845-933v00-invernadero-con-y-estantes-de-en-forma-de-u-para-cultiv",
+            "label": "Coche Eléctrico para Niños Audi R8 S...",
+            "productId": "370-472-coche-electrico-para-ninos-audi-r8-spyder-12v-litio-usb",
             "type": "product"
           },
           {
-            "label": "Invernadero Resistente",
-            "productId": "845-956v00-invernadero-resistente-con-4-ventanas-2-puertas-con-cre",
+            "label": "Correpasillos para Bebés 3 en 1 Merc...",
+            "productId": "370-508-correpasillos-para-bebes-3-en-1-mercedes-benz-12-36-meses",
             "type": "product"
           },
           {
-            "label": "Invernadero Resistente de",
-            "productId": "845-937v00-invernadero-resistente-de-con-con-cremallera-anti-uv-di",
-            "type": "product"
-          },
-          {
-            "label": "Invernadero",
-            "productId": "845-229v02-invernadero-de-tunel-invernadero-de-jardin-con-puerta-e",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Fence",
-        "handle": "fence",
-        "items": [
-          {
-            "label": "Separador",
-            "productId": "844-743v00-separador-de-ambientes-con-3-piezas-patron-de-hoja-gran",
-            "type": "product"
-          },
-          {
-            "label": "Jaula",
-            "productId": "845-894v00-jaula-de-cultivo-para-plantas-120x120x180-cm-con-puerta",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Gazebo & Marquees",
-        "handle": "gazebo-marquees",
-        "items": [
-          {
-            "label": "Techo",
-            "productId": "84c-357v00-techo-de-repuesto-para-cenador-cubierta-de-repuesto-con",
-            "type": "product"
-          },
-          {
-            "label": "Laterales para Carpa",
-            "productId": "84c-437v00-laterales-para-carpa-con-ventana-enrollable-y-puerta-co",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Awnings",
-        "handle": "awnings",
-        "items": [
-          {
-            "label": "Cenador",
-            "productId": "84c-299v01-cenador-de-jardin-hexagonal-4-05x3-4x2-85-m-con-doble-t",
-            "type": "product"
-          },
-          {
-            "label": "Carpa Plegable",
-            "productId": "840-158-carpa-plegable-con-bolsa-de-transporte-altura-ajustable",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Sun Loungers",
-        "handle": "sun-loungers",
-        "items": [
-          {
-            "label": "Tumbona",
-            "productId": "84b-129-tumbona-de-jardin-plegable-con-respaldo-ajustable-en-ca",
-            "type": "product"
-          },
-          {
-            "label": "Conjunto",
-            "productId": "84b-342v01-conjunto-de-plegables-de-aluminio-con-respaldo-regulabl",
+            "label": "Set de Bádminton de 7 Piezas con Red...",
+            "productId": "a95-009-set-de-badminton-de-7-piezas-con-red-con-soporte-negro-y-ver",
             "type": "product"
           }
         ]
       }
     ],
     "banner": {
-      "headline": "Banco Acapulco con Reposabrazos Cojine",
-      "subtext": "Sincronizado directamente desde el catálogo Shopify (37 productos disponibles).",
-      "linkText": "Ver Producto",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/1089/6946/0049/files/Y2L98a1a0854b24a4.jpg?v=1792600345",
-      "targetProductId": "867-177v01-banco-acapulco-con-reposabrazos-cojines-y-marco-de-acer"
+      "headline": "Colección Juguetes",
+      "subtext": "Mobiliario y confort con envío express desde Valencia.",
+      "linkText": "Ver Colección",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/1089/6946/0049/files/xB698a1a15a17ef6d.jpg?v=1792905554",
+      "targetProductId": "370-494-coche-electrico-ninos-12v-mercedes-amg-g63-control-remoto-2"
     }
   },
   {
-    "id": "pet-furniture",
-    "name": "Pet Furniture",
-    "handle": "pet-furniture",
+    "id": "hogar-y-jard-n",
+    "name": "Hogar y Jardín",
+    "handle": "hogar-y-jard-n",
     "icon": "PawPrint",
-    "featuredTag": "Mascotas",
+    "featuredTag": "743 Productos",
     "subcategories": [
       {
-        "title": "Cat Trees",
-        "handle": "cat-trees",
+        "title": "Selección Exclusiva",
+        "handle": "selecci-n-exclusiva",
         "items": [
           {
-            "label": "Juego",
-            "productId": "d30-731v80-juego-de-escalada-para-gatos-de-pared-4-piezas-con-hama",
+            "label": "Calefactor Eléctrico Cerámico PTC 20...",
+            "productId": "820-529-calefactor-electrico-ceramico-ptc-2000w-con-4-modos-llama-di",
             "type": "product"
           },
           {
-            "label": "Poste Rascador para Gatos Altura Ras",
-            "productId": "d30-663v00-poste-rascador-para-gatos-altura-rascador-para-gatos-co",
+            "label": "Chimenea Eléctrica de Pie/Pared 900/...",
+            "productId": "820-536-chimenea-electrica-de-pie-pared-900-1800w-con-tira-led-3-car",
             "type": "product"
           },
           {
-            "label": "Juego",
-            "productId": "d30-555v00-juego-de-escalada-para-gatos-de-pared-estantes-para-gat",
+            "label": "Chimenea Eléctrica Ultrafina 900/180...",
+            "productId": "820-530-chimenea-electrica-ultrafina-900-1800w-empotrable-colgante-d",
             "type": "product"
           },
           {
-            "label": "2 en 1 Reposapiés Cama para Gatos",
-            "productId": "d30-679v00-2-en-1-reposapies-cama-para-gatos-con-cojin-extraible-b",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Dog Beds",
-        "handle": "dog-beds",
-        "items": [
-          {
-            "label": "Sofá para Perros Grandes Cama Elevad",
-            "productId": "d04-262v00-sofa-para-perros-grandes-cama-elevada-para-perros-con-c",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Rabbit Hutch",
-        "handle": "rabbit-hutch",
-        "items": [
-          {
-            "label": "Conejera Exterior Jaula para Conejos",
-            "productId": "d51-314-conejera-exterior-jaula-para-conejos-grande-con-ruedas",
+            "label": "Cafetera Espresso 19 Bares Cafetera ...",
+            "productId": "800-270-cafetera-espresso-19-bares-cafetera-semiautomatica-deposito",
             "type": "product"
           },
           {
-            "label": "Jaula para Conejo Grande",
-            "productId": "d51-405v00-jaula-para-conejo-grande-con-2-ventanas-de-decoracion-r",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Cat Litter Boxes",
-        "handle": "cat-litter-boxes",
-        "items": [
-          {
-            "label": "Arenero para Gatos Cubierto",
-            "productId": "d31-085v00-arenero-para-gatos-cubierto-con-pala-cepillo-entrada-pr",
+            "label": "Calefactor Eléctrico Cerámico PTC 20...",
+            "productId": "820-526-calefactor-electrico-ceramico-ptc-2000w-con-5-modos-app-wifi",
             "type": "product"
           },
           {
-            "label": "Arenero para Gatos Cubierto",
-            "productId": "d31-049-arenero-para-gatos-cubierto-con-pala-inodoro-para-gatos",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Chicken Coop",
-        "handle": "chicken-coop",
-        "items": [
-          {
-            "label": "Gallinero",
-            "productId": "d51-150v01-gallinero-de-madera-310-5x149-5x149cm-jaula-para-4-6-ga",
-            "type": "product"
-          },
-          {
-            "label": "Gallinero",
-            "productId": "d51-362v00-gallinero-de-madera-grande-para-3-con-techo-asfaltico-n",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Bowls & Feeders",
-        "handle": "bowls-feeders",
-        "items": [
-          {
-            "label": "Comedero Elevado para Perros",
-            "productId": "d08-057v00-comedero-elevado-para-perros-con-2-tazones-de-acero-ino",
-            "type": "product"
-          },
-          {
-            "label": "Comedero Elevado para Perros Grandes",
-            "productId": "d08-041v00-comedero-elevado-para-perros-grandes-con-de-de-acero-in",
+            "label": "Chimenea Eléctrica Decorativa 1800W ...",
+            "productId": "820-518-chimenea-electrica-decorativa-1800w-con-repisa-efecto-llama",
             "type": "product"
           }
         ]
       }
     ],
     "banner": {
-      "headline": "Juego de Escalada para Gatos de Pared ",
-      "subtext": "Sincronizado directamente desde el catálogo Shopify (28 productos disponibles).",
-      "linkText": "Ver Producto",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/1089/6946/0049/files/wrW98a199659a032c.jpg?v=1792600125",
-      "targetProductId": "d30-731v80-juego-de-escalada-para-gatos-de-pared-4-piezas-con-hama"
+      "headline": "Colección Hogar y Jardín",
+      "subtext": "Mobiliario y confort con envío express desde Valencia.",
+      "linkText": "Ver Colección",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/1089/6946/0049/files/FUr98a1a136189f24.jpg?v=1792905553",
+      "targetProductId": "820-529-calefactor-electrico-ceramico-ptc-2000w-con-4-modos-llama-di"
     }
   },
   {
-    "id": "kids-play",
-    "name": "Kids & Play",
-    "handle": "kids-play",
-    "icon": "Baby",
-    "featuredTag": "Infantil",
+    "id": "muebles",
+    "name": "Muebles",
+    "handle": "muebles",
+    "icon": "Sparkles",
+    "featuredTag": "1042 Productos",
     "subcategories": [
       {
-        "title": "Swing Sets",
-        "handle": "swing-sets",
+        "title": "Selección Exclusiva",
+        "handle": "selecci-n-exclusiva",
         "items": [
           {
-            "label": "Columpio Infantil 4 en 1 Columpio pa",
-            "productId": "344-080v00-columpio-infantil-4-en-1-columpio-para-ninos-con-2-colu",
+            "label": "Conjunto de Comedor con Mesa Plegabl...",
+            "productId": "83a-569-conjunto-de-comedor-con-mesa-plegable-y-4-sillas-apilables-p",
             "type": "product"
           },
           {
-            "label": "Columpio para Niños y Bebés",
-            "productId": "344-079v00-columpio-para-ninos-y-bebes-con-1-silla-para-ninos-1-si",
+            "label": "Mesa de Comedor Ovalada Rústica para...",
+            "productId": "83a-574-mesa-de-comedor-ovalada-rustica-para-4-personas-tablero-grue",
             "type": "product"
           },
           {
-            "label": "Tobogán para Niños",
-            "productId": "331-042v00-tobogan-para-ninos-de-18-a-36-meses-con-2-escaleras-1-c",
+            "label": "Sillón Relax Reclinable Eléctrico Le...",
+            "productId": "713-251-sillon-relax-reclinable-electrico-levanta-personas-con-2-pun",
             "type": "product"
           },
           {
-            "label": "Tobogán para Niños de",
-            "productId": "331-043v00-tobogan-para-ninos-de-con-de-baloncesto-y-patron-de-tig",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Ride-on Cars",
-        "handle": "ride-on-cars",
-        "items": [
-          {
-            "label": "Excavadora sin Pedales",
-            "productId": "370-123-excavadora-sin-pedales-con-brazo-movil-correpasillos-co",
+            "label": "Sofá Modular en L de 2 Plazas con Ot...",
+            "productId": "83b-911-sofa-modular-en-l-de-2-plazas-con-otomana-reversible-sofa-de",
             "type": "product"
           },
           {
-            "label": "Go Kart a Pedales para Niños",
-            "productId": "370-276v00-go-kart-a-pedales-para-ninos-con-asiento-ajustable-neum",
+            "label": "Mesa de Comedor Rectangular Moderna ...",
+            "productId": "83a-592-mesa-de-comedor-rectangular-moderna-6-personas-tablero-vidri",
             "type": "product"
           },
           {
-            "label": "Tractor a Pedales para Niños",
-            "productId": "341-019v00-tractor-a-pedales-para-ninos-de-3-anos-excavadora-infan",
-            "type": "product"
-          },
-          {
-            "label": "Tractor a Pedales para Niños a parti",
-            "productId": "341-018v00-tractor-a-pedales-para-ninos-a-partir-de-3-anos-excavad",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Musical Toys & Instruments",
-        "handle": "musical-toys-instruments",
-        "items": [
-          {
-            "label": "Juego",
-            "productId": "347-019v00-juego-de-equilibrio-infantil-set-de-5-piezas-para-entre",
-            "type": "product"
-          },
-          {
-            "label": "Juego",
-            "productId": "390-023v00-juego-de-piano-infantil-de-con-microfono-taburete-luces",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Kids Beds",
-        "handle": "kids-beds",
-        "items": [
-          {
-            "label": "Tocador para Niñas",
-            "productId": "316-010v80-tocador-para-ninas-con-espejo-y-taburete-tocador-de-maq",
-            "type": "product"
-          },
-          {
-            "label": "Tocador para Niños",
-            "productId": "316-001v00-tocador-para-ninos-con-espejo-y-taburete-tocador-infant",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Kids Storage",
-        "handle": "kids-storage",
-        "items": [
-          {
-            "label": "Estantería para Juguetes Infantil Or",
-            "productId": "311-056v80-estanteria-para-juguetes-infantil-organizador-infantil",
-            "type": "product"
-          },
-          {
-            "label": "Librería para Niños",
-            "productId": "311-064v80-libreria-para-ninos-de-3-anos-con-6-compartimientos-y-3",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Kids Table & Chair Sets",
-        "handle": "kids-table-chair-sets",
-        "items": [
-          {
-            "label": "Pupitre Infantil Altura Ajustable",
-            "productId": "312-088v00-pupitre-infantil-altura-ajustable-con-1-cajon-1-estante",
-            "type": "product"
-          },
-          {
-            "label": "Set",
-            "productId": "312-102v00-set-de-mesa-y-conjunto-de-muebles-infantiles-de-para-ni",
+            "label": "Arcón Exterior 400L Baúl de Almacena...",
+            "productId": "84g-479-arcon-exterior-400l-baul-de-almacenaje-exterior-de-acero-gal",
             "type": "product"
           }
         ]
       }
     ],
     "banner": {
-      "headline": "Columpio Infantil 4 en 1 Columpio para",
-      "subtext": "Sincronizado directamente desde el catálogo Shopify (28 productos disponibles).",
-      "linkText": "Ver Producto",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/1089/6946/0049/files/b5598a1a07c018b2e.jpg?v=1792600340",
-      "targetProductId": "344-080v00-columpio-infantil-4-en-1-columpio-para-ninos-con-2-colu"
+      "headline": "Colección Muebles",
+      "subtext": "Mobiliario y confort con envío express desde Valencia.",
+      "linkText": "Ver Colección",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/1089/6946/0049/files/cP798a1a13613ee0a.jpg?v=1792905551",
+      "targetProductId": "83a-569-conjunto-de-comedor-con-mesa-plegable-y-4-sillas-apilables-p"
     }
   },
   {
-    "id": "sports-fitness",
-    "name": "Sports & Fitness",
-    "handle": "sports-fitness",
-    "icon": "Dumbbell",
-    "featuredTag": "Active",
+    "id": "ferreter-a",
+    "name": "Ferretería",
+    "handle": "ferreter-a",
+    "icon": "Layers",
+    "featuredTag": "56 Productos",
     "subcategories": [
       {
-        "title": "Dumbbells",
-        "handle": "dumbbells",
+        "title": "Selección Exclusiva",
+        "handle": "selecci-n-exclusiva",
         "items": [
           {
-            "label": "Soporte",
-            "productId": "a91-289v00-soporte-de-almacenamiento-para-mancuernas-de-acero-para",
+            "label": "Puerta Corredera Interior 106,7x213,...",
+            "productId": "b70-088-puerta-corredera-interior-106-7x213-4-cm-con-kit-de-montaje",
             "type": "product"
           },
           {
-            "label": "Set",
-            "productId": "a91-286v00-set-de-musculacion-con-1-barra-y-6-discos-barra-de-pesa",
+            "label": "Banco de Trabajo con Ruedas 128x49,5...",
+            "productId": "b71-079-banco-de-trabajo-con-ruedas-128x49-5x127-5-cm-negro-y-amaril",
             "type": "product"
           },
           {
-            "label": "Barra",
-            "productId": "a91-284v00-barra-de-pesas-de-acero-120-cm-barra-curl-ez-con-2-pres",
+            "label": "Armario de Herramientas de Acero 180...",
+            "productId": "b20-133-armario-de-herramientas-de-acero-180-cm-con-ruedas-extraible",
             "type": "product"
           },
           {
-            "label": "Barra",
-            "productId": "a91-285v00-barra-de-pesas-de-acero-180-cm-50-mm-con-2-presillas-ca",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Other Fitness Equipment & Accessories",
-        "handle": "other-fitness-equipment-accessories",
-        "items": [
-          {
-            "label": "Cama Elástica Plegable",
-            "productId": "a71-034v00-cama-elastica-plegable-con-mango-ajustable-marco-de-ace",
+            "label": "Carro de Herramientas con Baúl Super...",
+            "productId": "b20-109-carro-de-herramientas-con-baul-superior-6-cajones-armario-ce",
             "type": "product"
           },
           {
-            "label": "Cajón",
-            "productId": "a93-052-cajon-de-salto-3-en-1-con-cremallera-y-3-alturas-difere",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Camping & Hiking",
-        "handle": "camping-hiking",
-        "items": [
-          {
-            "label": "Tienda",
-            "productId": "a20-258-tienda-de-ducha-portatil-con-bolsillo-bolsa-de-transpor",
+            "label": "Mesa de Trabajo de Acero Inoxidable ...",
+            "productId": "b71-065-mesa-de-trabajo-de-acero-inoxidable-con-2-estantes-para-coci",
             "type": "product"
           },
           {
-            "label": "Carpa",
-            "productId": "a20-166-carpa-de-playa-pop-up-para-1-con-y-y-bolsa-de-transport",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Basketball",
-        "handle": "basketball",
-        "items": [
-          {
-            "label": "Canasta",
-            "productId": "a61-045v00-canasta-de-baloncesto-ajustable-236-293-cm-con-ruedas-t",
-            "type": "product"
-          },
-          {
-            "label": "Canasta",
-            "productId": "a61-041v00-canasta-de-baloncesto-con-altura-ajustable-178-ruedas-y",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Squat Racks",
-        "handle": "squat-racks",
-        "items": [
-          {
-            "label": "Multiestación",
-            "productId": "a91-290v00-multiestacion-de-musculacion-con-placas-de-peso-de-45-k",
-            "type": "product"
-          },
-          {
-            "label": "Máquina",
-            "productId": "a91-268v00-maquina-de-multiestacion-musculacion-entrenamiento-carg",
-            "type": "product"
-          }
-        ]
-      },
-      {
-        "title": "Boxing Bags",
-        "handle": "boxing-bags",
-        "items": [
-          {
-            "label": "Soporte para Saco",
-            "productId": "a91-300v00-soporte-para-saco-de-boxeo-plegable-con-altura-ajustabl",
-            "type": "product"
-          },
-          {
-            "label": "Saco",
-            "productId": "a91-196-saco-de-boxeo-profesional-punching-bag-72-cm-con-guante",
+            "label": "Soporte de Sierra Ingletadora Plegab...",
+            "productId": "b71-091-soporte-de-sierra-ingletadora-plegable-universal-con-2-rodil",
             "type": "product"
           }
         ]
       }
     ],
     "banner": {
-      "headline": "Soporte de Almacenamiento para Mancuer",
-      "subtext": "Sincronizado directamente desde el catálogo Shopify (29 productos disponibles).",
-      "linkText": "Ver Producto",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/1089/6946/0049/files/G5O98a1a07bfd9848.jpg?v=1792600108",
-      "targetProductId": "a91-289v00-soporte-de-almacenamiento-para-mancuernas-de-acero-para"
+      "headline": "Colección Ferretería",
+      "subtext": "Mobiliario y confort con envío express desde Valencia.",
+      "linkText": "Ver Colección",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/1089/6946/0049/files/3ju98a1a0f04fdf13.jpg?v=1792903206",
+      "targetProductId": "b70-088-puerta-corredera-interior-106-7x213-4-cm-con-kit-de-montaje"
+    }
+  },
+  {
+    "id": "deporte-y-aire-libre",
+    "name": "Deporte y Aire Libre",
+    "handle": "deporte-y-aire-libre",
+    "icon": "Heart",
+    "featuredTag": "222 Productos",
+    "subcategories": [
+      {
+        "title": "Selección Exclusiva",
+        "handle": "selecci-n-exclusiva",
+        "items": [
+          {
+            "label": "Plataforma Vibratoria con 99 Niveles...",
+            "productId": "a90-304-plataforma-vibratoria-con-99-niveles-de-velocidad-pantalla-l",
+            "type": "product"
+          },
+          {
+            "label": "Máquina Elíptica 3 en 1 Silenciosa c...",
+            "productId": "a90-456-maquina-eliptica-3-en-1-silenciosa-con-asiento-resistencia-m",
+            "type": "product"
+          },
+          {
+            "label": "Juego de Discos de Pesas de 4 Piezas...",
+            "productId": "a91-502-juego-de-discos-de-pesas-de-4-piezas-agujero-25-mm-total-25",
+            "type": "product"
+          },
+          {
+            "label": "Juego de Discos de Pesas de 4 Piezas...",
+            "productId": "a91-502-juego-de-discos-de-pesas-de-4-piezas-agujero-25-mm-total-15",
+            "type": "product"
+          },
+          {
+            "label": "Scooter Acrobático para Trucos con P...",
+            "productId": "aa1-138-scooter-acrobatico-para-trucos-con-plataforma-de-aluminio-ro",
+            "type": "product"
+          },
+          {
+            "label": "Scooter Acrobático para Trucos con P...",
+            "productId": "aa1-137-scooter-acrobatico-para-trucos-con-plataforma-de-aluminio-ro",
+            "type": "product"
+          }
+        ]
+      }
+    ],
+    "banner": {
+      "headline": "Colección Deporte y Aire Libre",
+      "subtext": "Mobiliario y confort con envío express desde Valencia.",
+      "linkText": "Ver Colección",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/1089/6946/0049/files/gez98a1a0cc139c16.jpg?v=1792903139",
+      "targetProductId": "a90-304-plataforma-vibratoria-con-99-niveles-de-velocidad-pantalla-l"
     }
   }
 ];
-
-export const SHOPIFY_SYNC_STATS = {
-  storeDomain: "td5kxa-2d.myshopify.com",
-  storeName: "Casalivo",
-  totalStoreProducts: 1501,
-  activeSyncedProducts: 241,
-  categoriesCount: 6,
-  lastSynced: "2026-10-22T03:29:30.616Z",
-};

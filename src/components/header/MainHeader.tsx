@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Search, User, Heart, ShoppingBag, X, Clock, Flame, ChevronRight } from 'lucide-react';
+import { Search, User, Heart, ShoppingBag, X, Clock, Flame, ChevronRight, RefreshCw } from 'lucide-react';
 import { useStore } from '../../context/StoreContext';
 
 export const MainHeader: React.FC = () => {
@@ -15,6 +15,11 @@ export const MainHeader: React.FC = () => {
     setIsWishlistOpen,
     setIsLoginModalOpen,
     setActiveProductById,
+    navigateToHome,
+    navigateToCatalog,
+    currentView,
+    liveStats,
+    setIsShopifyModalOpen,
     showToast,
   } = useStore();
 
@@ -50,17 +55,8 @@ export const MainHeader: React.FC = () => {
     e.preventDefault();
     if (!searchQuery.trim()) return;
     
-    const match = products.find((p) =>
-      p.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      Object.values(p.title).some((title) => title.toLowerCase().includes(searchQuery.toLowerCase()))
-    );
-
-    if (match) {
-      setActiveProductById(match.id);
-      showToast(`Showing: ${match.brand}`);
-    } else {
-      showToast(`Showing results for "${searchQuery}"`);
-    }
+    navigateToCatalog(selectedCategory, searchQuery);
+    showToast(`Mostrando catálogo para "${searchQuery}"`);
     setIsSearchFocused(false);
   };
 
@@ -69,10 +65,10 @@ export const MainHeader: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-16 sm:h-18 flex items-center justify-between gap-4 lg:gap-8">
           
-          {/* 1. Brand Logo: caselive */}
-          <div className="flex items-center shrink-0">
-            <a
-              href="#top"
+          {/* 1. Brand Logo & Primary Navigation Links */}
+          <div className="flex items-center gap-5 lg:gap-7 shrink-0">
+            <button
+              onClick={() => navigateToHome()}
               className="flex items-center gap-1.5 group cursor-pointer focus:outline-none"
               title="caselive Home & Living"
             >
@@ -82,7 +78,27 @@ export const MainHeader: React.FC = () => {
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#8A584C] ml-0.5 inline-block" />
               </div>
-            </a>
+            </button>
+
+            {/* Quick View Nav Links */}
+            <nav className="hidden lg:flex items-center gap-1">
+              <button
+                onClick={() => navigateToHome()}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
+                  currentView === 'home' ? 'text-black bg-neutral-100 font-bold' : 'text-neutral-600 hover:text-black'
+                }`}
+              >
+                Inicio
+              </button>
+              <button
+                onClick={() => navigateToCatalog('all')}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
+                  currentView === 'catalog' ? 'text-black bg-neutral-100 font-bold' : 'text-neutral-600 hover:text-black'
+                }`}
+              >
+                Catálogo
+              </button>
+            </nav>
           </div>
 
           {/* 2. Global Search Bar */}

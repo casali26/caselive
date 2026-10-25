@@ -196,32 +196,34 @@ export const FoldableSections: React.FC = () => {
             </div>
           </div>
 
-          {/* Clean Specs Table (No Ref / SKU) */}
+          {/* Clean Specs Table dynamically extracted from API */}
           <div className="overflow-x-auto border border-neutral-200 rounded-lg">
             <table className="w-full text-left text-xs sm:text-sm divide-y divide-neutral-200">
               <tbody className="divide-y divide-neutral-100">
                 <tr className="bg-neutral-50/50">
-                  <td className="py-2.5 px-4 font-medium text-neutral-800 w-1/3">Overall Dimensions</td>
-                  <td className="py-2.5 px-4 text-neutral-600 font-mono">{activeProduct.dimensions.overall}</td>
+                  <td className="py-2.5 px-4 font-medium text-neutral-800 w-1/3 sm:w-2/5">Dimensiones Totales (L × An × Al)</td>
+                  <td className="py-2.5 px-4 text-neutral-900 font-mono font-semibold">{activeProduct.dimensions.overall}</td>
                 </tr>
                 <tr>
-                  <td className="py-2.5 px-4 font-medium text-neutral-800">Seat Dimensions</td>
-                  <td className="py-2.5 px-4 text-neutral-600 font-mono">
-                    Width: {activeProduct.dimensions.seatWidth} · Depth: {activeProduct.dimensions.seatDepth}
-                  </td>
+                  <td className="py-2.5 px-4 font-medium text-neutral-800">Peso Neto</td>
+                  <td className="py-2.5 px-4 text-neutral-700 font-mono">{activeProduct.dimensions.netWeight}</td>
                 </tr>
-                <tr className="bg-neutral-50/50">
-                  <td className="py-2.5 px-4 font-medium text-neutral-800">Seat Height Range</td>
-                  <td className="py-2.5 px-4 text-neutral-600 font-mono">{activeProduct.dimensions.seatHeight}</td>
-                </tr>
-                <tr>
-                  <td className="py-2.5 px-4 font-medium text-neutral-800">Reclined Position Depth</td>
-                  <td className="py-2.5 px-4 text-neutral-600 font-mono">{activeProduct.dimensions.reclinedDepth}</td>
-                </tr>
+                {activeProduct.dimensions.maxLoad && (
+                  <tr className="bg-neutral-50/50">
+                    <td className="py-2.5 px-4 font-medium text-neutral-800">Capacidad Máxima de Carga</td>
+                    <td className="py-2.5 px-4 text-neutral-700 font-mono">{activeProduct.dimensions.maxLoad}</td>
+                  </tr>
+                )}
+                {activeProduct.dimensions.boxDimensions && activeProduct.dimensions.boxDimensions !== 'Protección de embalaje reforzado' && (
+                  <tr>
+                    <td className="py-2.5 px-4 font-medium text-neutral-800">Dimensiones de la Caja</td>
+                    <td className="py-2.5 px-4 text-neutral-700 font-mono">{activeProduct.dimensions.boxDimensions}</td>
+                  </tr>
+                )}
                 {cleanSpecs.map((spec, sIdx) => (
                   <tr key={sIdx} className={sIdx % 2 === 0 ? 'bg-neutral-50/50' : ''}>
                     <td className="py-2.5 px-4 font-medium text-neutral-800">{spec.label}</td>
-                    <td className="py-2.5 px-4 text-neutral-600">{spec.value}</td>
+                    <td className="py-2.5 px-4 text-neutral-700">{spec.value}</td>
                   </tr>
                 ))}
               </tbody>

@@ -7,6 +7,7 @@ export const MegaMenu: React.FC = () => {
     t,
     setActiveProductById,
     categoriesTree,
+    navigateToCatalog,
     showToast,
   } = useStore();
 
@@ -146,12 +147,7 @@ export const MegaMenu: React.FC = () => {
 
                   <button
                     onClick={() => {
-                      if (currentCategoryData.banner.targetProductId) {
-                        setActiveProductById(currentCategoryData.banner.targetProductId);
-                        showToast(`Opened: ${currentCategoryData.banner.headline}`);
-                      } else {
-                        showToast(`Navigating to collection: ${currentCategoryData.name}`);
-                      }
+                      navigateToCatalog(currentCategoryData.name);
                       setActiveMenuId(null);
                     }}
                     className="relative z-10 inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-200 hover:text-white transition-colors cursor-pointer group-hover:translate-x-1 duration-200"
